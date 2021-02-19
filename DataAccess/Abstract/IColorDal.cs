@@ -1,12 +1,14 @@
 ﻿using Entities.Concrete;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Text;
+using Color = Entities.Concrete.Color;
 
 namespace DataAccess.Abstract
 {
-    public interface ICarDal : IEntityRepository<Car>
+    public interface IColorDal:IEntityRepository <Color>
     {
-        
+
     }
 }

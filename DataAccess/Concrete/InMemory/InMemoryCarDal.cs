@@ -3,6 +3,7 @@ using Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 
 namespace DataAccess.Concrete.InMemory
@@ -42,15 +43,40 @@ namespace DataAccess.Concrete.InMemory
             carToUpdate.ModelYear = car.ModelYear;
 
         }
-        public List<Car> GetAll()
+
+        //public Car GetById(int brandId)
+        //{
+        //    return _cars.Where(c => c.BrandId == brandId).ToList();   
+        //}
+
+        public List<Car> GetCarsByBrandId(int brandId)
         {
-            return _cars;
-            
+            return _cars.Where(c => c.BrandId == brandId).ToList();
         }
 
-        public List<Car> GetById(int brandId)
+        //public List<Car> GetAll(Expression<Func<Car, bool>> filter=null)
+        //{
+        //    return filter==null ? _cars.Where(c => c.BrandName == Car).ToList:_cars.Add(Car).ToList();
+        //}
+
+        public List<Car> GetCarsByColorId(int colorId)
         {
-            return _cars.Where(c => c.BrandId == brandId).ToList();   
+            return _cars.Where(c => c.ColorId == colorId).ToList();
+        }
+
+        public Car Get(Expression<Func<Car, bool>> filter)
+        {
+            throw new NotImplementedException();
+        }
+
+        List<Car> IEntityRepository<Car>.GetAll(Expression<Func<Car, bool>> filter)
+        {
+            return _cars.Where(c => c.BrandName == Car).ToList;
+        }
+
+        Car IEntityRepository<Car>.GetById(int brandId)
+        {
+            throw new NotImplementedException();
         }
     }
 }
