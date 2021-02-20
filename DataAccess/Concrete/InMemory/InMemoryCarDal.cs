@@ -1,5 +1,6 @@
 ﻿using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -44,24 +45,24 @@ namespace DataAccess.Concrete.InMemory
 
         }
 
-        //public Car GetById(int brandId)
-        //{
-        //    return _cars.Where(c => c.BrandId == brandId).ToList();   
-        //}
+        public List<Car> GetById(int brandId)
+        {
+            return _cars.Where(c => c.BrandId == brandId).ToList();   
+        }
 
         public List<Car> GetCarsByBrandId(int brandId)
         {
             return _cars.Where(c => c.BrandId == brandId).ToList();
         }
 
-        //public List<Car> GetAll(Expression<Func<Car, bool>> filter=null)
-        //{
-        //    return filter==null ? _cars.Where(c => c.BrandName == Car).ToList:_cars.Add(Car).ToList();
-        //}
+        public List<Car> GetAll(Expression<Func<Car, bool>> filter=null)
+        {
+            return filter==null ? _cars.Where(c => c.BrandName == Car).ToList:_cars.Add(Car).ToList();
+        }
 
         public List<Car> GetCarsByColorId(int colorId)
         {
-            return _cars.Where(c => c.ColorId == colorId).ToList();
+            return _cars.Where(clr => clr.ColorId == colorId).ToList();
         }
 
         public Car Get(Expression<Func<Car, bool>> filter)
@@ -69,14 +70,19 @@ namespace DataAccess.Concrete.InMemory
             throw new NotImplementedException();
         }
 
-        List<Car> IEntityRepository<Car>.GetAll(Expression<Func<Car, bool>> filter)
-        {
-            return _cars.Where(c => c.BrandName == Car).ToList;
-        }
-
-        Car IEntityRepository<Car>.GetById(int brandId)
+        public List<CarDetailDto> GetCarDetails()
         {
             throw new NotImplementedException();
         }
+
+        //List<Car> IEntityRepository<Car>.GetAllByBrandId(Expression<Func<Car, bool>> filter)
+        //{
+        //    return _cars.Where(c => c.BrandName == Car).ToList;
+        //}
+
+        //Car IEntityRepository<Car>.GetById(int brandId)
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 }
