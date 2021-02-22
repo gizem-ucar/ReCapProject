@@ -1,4 +1,4 @@
-﻿using Business.Abstract;
+﻿//using Business.Abstract;
 using Business.Concrete;
 using DataAccess.Concrete.EntityFramework;
 using DataAccess.Concrete.InMemory;
@@ -10,9 +10,8 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
-            //CarTest();
+            CarTest();
             //BrandTest();
-
 
 
             //foreach (var car in carManager.GetById(5))
@@ -23,8 +22,11 @@ namespace ConsoleUI
 
         private static void BrandTest()
         {
-            BrandManager brandManager = new BrandManager();
-            foreach (var brand in brandManager.GetAll())
+            BrandManager brandManager = new BrandManager(new EfBrandDal());
+            
+            var result = brandManager.GetAll();           
+            
+            foreach (var brand in result.Data)
             {
                 Console.WriteLine(brand.BrandName);
             }
@@ -34,10 +36,15 @@ namespace ConsoleUI
         {
             CarManager carManager = new CarManager(new EfCarDal());
 
-            foreach (var car in carManager.GetAllByBrandId(3))
+            var result = carManager.GetCarDetails();
+            if (result.Success==true)
             {
-                Console.WriteLine(car.BrandName);
+                foreach (var car in result.Data )
+                {
+                    Console.WriteLine(car.BrandName + "/" + car.ColorName);
+                }
             }
+            
         }
     }
 }

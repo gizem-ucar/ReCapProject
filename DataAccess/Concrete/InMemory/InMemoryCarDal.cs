@@ -15,11 +15,11 @@ namespace DataAccess.Concrete.InMemory
         public InMemoryCarDal()
         {
             _cars = new List<Car> { 
-                new Car{CarId=1, BrandName="BMW", BrandId=1, ColorId=1, DailyPrice=1000, ModelYear=2000},
-                new Car{CarId=2, BrandName="Jaguar", BrandId=2, ColorId=3, DailyPrice=6000, ModelYear=2020},
-                new Car{CarId=3, BrandName="Mini cooper", BrandId=2, ColorId=4, DailyPrice=8700, ModelYear=2010},
-                new Car{CarId=4, BrandName="Mercedes", BrandId=2, ColorId=16, DailyPrice=9000, ModelYear=2008},
-                new Car{CarId=5, BrandName="Anadol", BrandId=2, ColorId=9, DailyPrice=12000, ModelYear=2009}
+                new Car{CarId=1, BrandName="BMW", BrandId=1, ColorId="1", DailyPrice=1000, ModelYear=2000},
+                new Car{CarId=2, BrandName="Jaguar", BrandId=2, ColorId="3", DailyPrice=6000, ModelYear=2020},
+                new Car{CarId=3, BrandName="Mini cooper", BrandId=2, ColorId="4", DailyPrice=8700, ModelYear=2010},
+                new Car{CarId=4, BrandName="Mercedes", BrandId=2, ColorId="16", DailyPrice=9000, ModelYear=2008},
+                new Car{CarId=5, BrandName="Anadol", BrandId=2, ColorId="9", DailyPrice=12000, ModelYear=2009}
 
             };
         }
@@ -57,10 +57,11 @@ namespace DataAccess.Concrete.InMemory
 
         public List<Car> GetAll(Expression<Func<Car, bool>> filter=null)
         {
-            return filter==null ? _cars.Where(c => c.BrandName == Car).ToList:_cars.Add(Car).ToList();
+            throw new NotImplementedException();
+            //    return filter==null ? _cars.Where(c => c.BrandName == null ).ToList:_cars.Add(base).ToList();
         }
 
-        public List<Car> GetCarsByColorId(int colorId)
+        public List<Car> GetCarsByColorId(string colorId)
         {
             return _cars.Where(clr => clr.ColorId == colorId).ToList();
         }

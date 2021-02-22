@@ -67,15 +67,6 @@ namespace Core.DataAccess.EntityFramework
         //    }
         //}
 
-        public List<TEntity> GetCarsByBrandId(int brandId)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<TEntity> GetCarsByColorId(int ColorId)
-        {
-            throw new NotImplementedException();
-        }
 
         public void Update(TEntity entity)
         {
