@@ -1,9 +1,8 @@
 ﻿using Core.DataAccess;
 using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Text;
-using Color = Entities.Concrete.Color;
+using Entities.Concrete;
 
 namespace DataAccess.Abstract
 {

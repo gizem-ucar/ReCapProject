@@ -30,7 +30,7 @@ namespace DataAccess.Concrete.EntityFramework
                                  on cst.UserId equals u.UserId
                                  select new RentalDetailDto
                                  {
-                                     RentalId =r.Id,
+                                     RentalId =r.RentalId,
                                      CarName = b.BrandName,
                                      CompanyName = cst.CompanyName,
                                      UserName = u.FirstName + " " + u.LastName,
