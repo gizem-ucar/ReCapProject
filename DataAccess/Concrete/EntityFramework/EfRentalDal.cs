@@ -27,10 +27,10 @@ namespace DataAccess.Concrete.EntityFramework
                                  join b in context.Brands
                                  on c.BrandId equals b.BrandId
                                  join u in context.Users
-                                 on cst.UserId equals u.UserId
+                                 on cst.UserId equals u.Id
                                  select new RentalDetailDto
                                  {
-                                     RentalId =r.Id,
+                                     RentalId =r.RentalId,
                                      CarName = b.BrandName,
                                      CompanyName = cst.CompanyName,
                                      UserName = u.FirstName + " " + u.LastName,

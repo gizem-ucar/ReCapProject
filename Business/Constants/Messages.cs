@@ -14,5 +14,6 @@ namespace Business.Constants
         public static string CarDeleted = "Araç silindi";
         public static string CarUpdate = "Araç güncellendi.";
         public static string CarUpdateInvalid = "Araç güncellenemedi.";
+        public static string AuthorizationDenied = "Yetkiniz yok";
     }
 }
