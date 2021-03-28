@@ -24,14 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Wwwroot\Images\Minicooper\mini5kapi.png" />
-    <None Include="Wwwroot\Images\Minicooper\mini5kapi3.jpg" />
-    <None Include="Wwwroot\Images\Minicooper\mini5kapi6.jpg" />
-    <None Include="Wwwroot\Images\Minicooper\mini5kapi8.jpg" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Models\" />
+    <Folder Include="wwwroot\Images\" />
   </ItemGroup>
 
 

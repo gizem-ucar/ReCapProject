@@ -3,13 +3,11 @@ using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
-//using System.Linq.Expressions;
 using System.Text;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-    public class EfBrandDal : EfEntityRepositoryBase<Brand,CarRentalContext>, IBrandDal
+    public class EfCarImageDal:EfEntityRepositoryBase<CarImage,CarRentalContext>, ICarImageDal
     {
-        
     }
 }

@@ -30,7 +30,7 @@ namespace DataAccess.Concrete.EntityFramework
                                  on cst.UserId equals u.Id
                                  select new RentalDetailDto
                                  {
-                                     RentalId =r.RentalId,
+                                     RentalId = r.RentalId,
                                      CarName = b.BrandName,
                                      CompanyName = cst.CompanyName,
                                      UserName = u.FirstName + " " + u.LastName,
@@ -42,8 +42,6 @@ namespace DataAccess.Concrete.EntityFramework
                     return result.ToList();
 
                 }
-                
-
             }
         }
     }
