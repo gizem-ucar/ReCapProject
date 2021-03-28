@@ -26,7 +26,6 @@ namespace Core.Utilities.FileHelpers
             }
             return result.Path2;
         }
-
         public static string Update(string sourcePath, IFormFile file)
         {
             var result = newPath(file);
@@ -70,7 +69,7 @@ namespace Core.Utilities.FileHelpers
             var newPath = Guid.NewGuid() + fileExtension;
 
 
-            string path = Environment.CurrentDirectory + @"\wwwroot\uploads";
+            string path = Environment.CurrentDirectory + @"\wwwroot\Images";
 
             string result = $@"{path}\{newPath}";
 

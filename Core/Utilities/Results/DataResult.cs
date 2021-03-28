@@ -15,5 +15,7 @@ namespace Core.Utilities.Results
             Data = data;
         }
         public T Data { get; }
+
+        public byte[] PasswordHash => throw new NotImplementedException();
     }
 }

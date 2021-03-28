@@ -51,22 +51,6 @@ namespace Core.DataAccess.EntityFramework
             }
         }
 
-        //public List<TEntity> GetById(int brandId)
-        //{
-        //    using (TContext context = new TContext())
-        //    {
-        //        return context.Set<TEntity>.SingleOrDefault(c => c.BrandId == brandId);   //(filter) idi
-        //    }
-        //}
-
-        //public TEntity GetById(int brandId)
-        //{
-        //    using (TContext context = new TContext())
-        //    {
-        //        return context.Cars.SingleOrDefault(c => c.BrandId == brandId);   //(filter) idi
-        //    }
-        //}
-
 
         public void Update(TEntity entity)
         {

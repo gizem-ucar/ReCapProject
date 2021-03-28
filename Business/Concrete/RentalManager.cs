@@ -34,7 +34,6 @@ namespace Business.Concrete
             _rentalDal.Delete(rental);
             return new SuccessResult(Messages.CarDeleted);
         }
-
         public IDataResult<List<Rental>> GetAll()
         {
             return new SuccessDataResult<List<Rental>>(_rentalDal.GetAll());
@@ -59,5 +58,9 @@ namespace Business.Concrete
             _rentalDal.Add(rental);
             return new SuccessResult(Messages.CarUpdate);
         }
+        //public IDataResult<RentalDetailDto> GetRentalDetailsById(int id)
+        //{
+        //    return new SuccessDataResult<RentalDetailDto>(_rentalDal.GetRentalDetails(id));
+        //}
     }
 }
