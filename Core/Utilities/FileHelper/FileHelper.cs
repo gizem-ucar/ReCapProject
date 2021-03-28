@@ -26,7 +26,6 @@ namespace Core.Utilities.FileHelpers
             }
             return result.Path2;
         }
-
         public static string Update(string sourcePath, IFormFile file)
         {
             var result = newPath(file);
