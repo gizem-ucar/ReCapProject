@@ -8,9 +8,9 @@ using System.Text;
 using System.Linq;
 using DataAccess.Concrete.EntityFramework;
 
-namespace DataAccess.Concrete.Entity_Framework
+namespace DataAccess.Concrete.EntityFramework
 {
-    public class EFUserDAL : EfEntityRepositoryBase<User, CarRentalContext>, IUserDal
+    public class EfUserDal : EfEntityRepositoryBase<User, CarRentalContext>, IUserDal
     {
         public List<OperationClaim> GetClaims(User user)
         {
